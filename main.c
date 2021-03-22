@@ -21,19 +21,17 @@ Item *reorg(Item *p) {
     char *mas16[16] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
     Item head = {'*', p};
     Item *cur = &head, *prev = &head;
-    Item *s, *a;
-    Item *pr;
+    Item *s, *pr;
     Item head1 = {'*', NULL};
     Item *last1 = &head1;
     cur = cur->next;
     s = cur;
     int len = 0, ost, x, k = 0;
     while (cur) {
-        if ((cur->c != ' ')&&(cur->c!='\t') ) {
+        if ((cur->c != ' ')&&(cur->c!='\t')) {
             len++;
             cur = cur->next;
         } else {
-            a = cur;
             cur = s;
             ost = len % 4;
 //101
@@ -79,7 +77,7 @@ Item *reorg(Item *p) {
             last1 = last1->next;
             last1->c = cur->c;
             cur=cur->next;
-
+            s = cur;
         }
 
 
@@ -115,6 +113,7 @@ int getList(Item **pptr) {
         } else
             scanf("%*c");
     } while (n > 0);
+
     *pptr = head.next;
     return rc;
 }
