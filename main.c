@@ -79,6 +79,7 @@ Item *reorg(Item *p) {
             last1 = last1->next;
             last1->c = cur->c;
             cur=cur->next;
+
         }
 
 
