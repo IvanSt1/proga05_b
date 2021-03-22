@@ -34,7 +34,6 @@ Item *reorg(Item *p) {
         } else {
             cur = s;
             ost = len % 4;
-//101
             if (ost != 0) {
                 for (int i = 0; i < (ost); i++) {
                     if (cur->c == '0')
